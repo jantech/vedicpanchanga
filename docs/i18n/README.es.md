@@ -8,7 +8,7 @@
 
 Calculador de Drik Panchang con interfaz web moderna. Calcula los elementos tradicionales del Panchang hindú, los 16 cuadros divisionales (D1–D60), Vimshottari Daśā, Aṣṭakavarga y ventanas auspiciosas de Muhūrta para cualquier fecha (5000 a. C. – 5000 d. C.) y ubicación.
 
-**Sitio**: <https://vedicpanchanga.com>
+**Sitio**: <https://astronode.in>
 
 ⭐ Si este proyecto te resulta útil, por favor dale una estrella al repositorio — ayuda a que otras personas lo encuentren.
 
@@ -32,7 +32,7 @@ Requiere Python 3.10+ y Node.js 20+.
 
 ```bash
 git clone https://github.com/bidyashish/vedicpanchanga.com
-cd vedicpanchanga.com
+cd astronode.in
 
 # 1) Backend (terminal 1) — FastAPI en :8001
 cd backend

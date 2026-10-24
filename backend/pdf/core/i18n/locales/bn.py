@@ -46,7 +46,7 @@ LABELS: Dict[str, str] = {
     "sign_no": "রাশি সং.",
     "total": "মোট",
     "years_short": "বছর",
-    "footer": "vedicpanchanga.com দ্বারা নির্মিত",
+    "footer": "astronode.in দ্বারা নির্মিত",
     "saturday": "শনিবার",
     "sunday": "রবিবার",
     "monday": "সোমবার",

@@ -1029,7 +1029,7 @@ const fr: Record<string, string> = {
   auth_modal_title_signin: "Bon retour",
   auth_modal_title_signup: "Créez votre compte gratuit",
   auth_modal_blurb:
-    "Enregistrez vos thèmes, retrouvez-les sur tous vos appareils et naviguez sans publicité avec Premium.",
+    "Enregistrez vos thèmes, retrouvez-les sur tous vos appareils et enregistrez-en plus avec Premium.",
   auth_reason_save: "Connectez-vous pour enregistrer ce thème dans votre compte.",
   auth_terms_notice: "En continuant, vous acceptez nos {0} et notre {1}.",
   auth_error_generic: "Une erreur s'est produite. Veuillez réessayer.",
@@ -1054,11 +1054,11 @@ const fr: Record<string, string> = {
   acct_plan_premium: "Premium",
   acct_premium_badge: "Premium",
   acct_premium_desc:
-    "Navigation sans publicité et jusqu'à {0} thèmes enregistrés. Merci de soutenir le site.",
-  acct_free_desc: "La publicité permet de garder le site gratuit. Enregistrez jusqu'à {0} thèmes.",
+    "Jusqu'à {0} thèmes enregistrés. Merci de soutenir le site.",
+  acct_free_desc: "Enregistrez jusqu'à {0} thèmes.",
   acct_upgrade: "Passer à Premium",
   acct_upgrade_hint:
-    "Supprimez toutes les publicités et enregistrez plus de thèmes. Résiliable à tout moment.",
+    "Enregistrez plus de thèmes. Résiliable à tout moment.",
   acct_plan_monthly: "Mensuel",
   acct_plan_yearly: "Annuel",
   acct_renews: "Renouvellement le {0}",

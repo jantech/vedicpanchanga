@@ -62,7 +62,7 @@ def health():
     the process is up and the Swiss Ephemeris data directory is present. Returns
     503 + status "degraded" if the .se1 files are missing, since calculations
     silently fail without them (see CLAUDE.md). Reached publicly at
-    https://vedicpanchanga.com/api/health (the /api/ nginx proxy). The Grafana
+    https://astronode.in/api/health (the /api/ nginx proxy). The Grafana
     monitoring UI lives under /grafana, so app health stays under /api.
     """
     ephe_dir = ROOT_DIR / "ephe"
@@ -220,10 +220,10 @@ def suggest_lang(request: Request, response: Response):
     return {"country": cc, "lang": lang}
 
 
-_UJJAIN = {
-    "latitude": 23.1765,
-    "longitude": 75.7885,
-    "place_name": "Ujjain, Madhya Pradesh, India",
+_DEFAULT_LOCATION = {
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "place_name": "Chennai, Chennai Metropolitan Area, Chennai District, Tamil Nadu, India",
 }
 
 
@@ -231,7 +231,7 @@ _UJJAIN = {
 def geo_ip(request: Request, response: Response):
     """Return approximate visitor location from Cloudflare geo headers.
 
-    Falls back to Ujjain when headers are absent so the response is
+    Falls back to Chennai when headers are absent so the response is
     always valid JSON - the frontend never sees a non-200.
     """
     response.headers["Cache-Control"] = "no-store"
@@ -240,13 +240,13 @@ def geo_ip(request: Request, response: Response):
     raw_lat = request.headers.get("cf-iplatitude", "")
     raw_lon = request.headers.get("cf-iplongitude", "")
     if not raw_lat or not raw_lon:
-        return _UJJAIN
+        return _DEFAULT_LOCATION
 
     try:
         lat = float(raw_lat)
         lon = float(raw_lon)
     except ValueError:
-        return _UJJAIN
+        return _DEFAULT_LOCATION
 
     city = request.headers.get("cf-ipcity") or ""
     region = request.headers.get("cf-ipregion") or ""
@@ -470,6 +470,10 @@ def _get_pdf_pool() -> ProcessPoolExecutor:
 
 def _render_pdf_in_pool(**kwargs) -> bytes:
     global _pdf_pool
+    # Shared hosts (cPanel/Passenger) restrict extra processes and can't
+    # re-import __main__ for "spawn"; PDF_IN_PROCESS=1 renders in-thread.
+    if os.getenv("PDF_IN_PROCESS") == "1":
+        return render_pdf(**kwargs)
     try:
         return _get_pdf_pool().submit(render_pdf, **kwargs).result(timeout=60)
     except BrokenProcessPool:
@@ -552,7 +556,7 @@ app.add_middleware(
     allow_origins=[
         o.strip()
         for o in os.environ.get(
-            "CORS_ORIGINS", "https://vedicpanchanga.com,http://localhost:3121"
+            "CORS_ORIGINS", "https://astronode.in,http://localhost:3121"
         ).split(",")
         if o.strip()
     ],

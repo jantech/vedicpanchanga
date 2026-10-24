@@ -12,7 +12,7 @@
 
 Drik Panchang calculator with a modern web interface. Computes traditional Hindu Panchanga elements, divisional charts (D1-D60), Vimshottari Dasha, Ashtakavarga, planetary transits and auspicious Muhurta windows for any date (5000 BCE to 5000 CE) and any location.
 
-**Live**: <https://vedicpanchanga.com>
+**Live**: <https://astronode.in>
 
 ⭐ If this project is useful to you, please star the repo - it helps others find it.
 
@@ -44,7 +44,7 @@ Requires Python 3.10+ and Node.js 20+. The root `Makefile` bundles every workflo
 
 ```bash
 git clone https://github.com/bidyashish/vedicpanchanga.com
-cd vedicpanchanga.com
+cd astronode.in
 make install     # venv + pip install, npm ci, pre-commit hooks, seeds backend/.env
 make dev         # backend on :8001 and frontend on :3121 together
 ```
@@ -92,7 +92,7 @@ Vite bakes `VITE_*` vars in at **build time**, so edit `.env` and rebuild. Resta
 - **Multilingual UI** - English, Hindi, Tamil, Bengali, Nepali, Chinese, Japanese, Spanish, German, Portuguese, French, Russian, Arabic, Persian, Hebrew. RTL flips automatically for Arabic / Persian / Hebrew.
 - **Learn section** - articles on Kundali, the nine planets, Panchang, Dasha, Nakshatras, Rashi and divisional charts
 - **Accounts and saved charts** - optional sign-in with Google or email + password; save birth details from the Kundali page and reopen them from any device (`/account`). Every calculator keeps working without an account.
-- **Premium** - Stripe-billed monthly or yearly subscription that removes ads and raises the saved-chart limit; managed from the Account page through the Stripe customer portal
+- **Premium** - Stripe-billed monthly or yearly subscription that raises the saved-chart limit; managed from the Account page through the Stripe customer portal
 
 ---
 
@@ -158,7 +158,7 @@ bash /apps/panchanga/infra/auto-update-cron.sh
 ## Project structure
 
 ```
-vedicpanchanga.com/
+astronode.in/
 ├── backend/                 # FastAPI service (port 8001) - see backend/README.md
 │   ├── server.py            # entry: uvicorn server:app
 │   ├── auth.py              # optional API-key dependency
@@ -176,7 +176,7 @@ vedicpanchanga.com/
 │   └── tests/               # pytest suites - see backend/tests/README.md
 ├── frontend/                # Vite + React + TypeScript (port 3121) - see frontend/README.md
 │   ├── index.html           # static SEO + JSON-LD
-│   ├── public/              # favicon, og-image, sitemap.xml, robots.txt, llms.txt, ads.txt
+│   ├── public/              # favicon, og-image, sitemap.xml, robots.txt, llms.txt
 │   ├── scripts/             # check-i18n.mjs (locale parity + native-script guard)
 │   └── src/
 │       ├── App.tsx          # shell: top bar, path-routed pages, footer
@@ -184,7 +184,7 @@ vedicpanchanga.com/
 │       │                    # Privacy, Terms, articles/ (the /learn/* pages)
 │       ├── auth/            # AuthProvider / useAuth (session, premium flag), saved-chart helpers
 │       ├── components/      # shell/, common/, account/, kundali/, panchang/, transits/, ui/
-│       ├── lib/             # api.ts, format.ts, seo.ts, urlState.ts, adsense.ts, ...
+│       ├── lib/             # api.ts, format.ts, seo.ts, urlState.ts, ...
 │       ├── types/api.ts     # TypeScript shapes for all backend responses
 │       └── i18n/            # provider, astro name tables, locales/*.ts (15 languages)
 ├── infra/                   # provisioning + deploy scripts - see infra/README.md

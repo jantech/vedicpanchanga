@@ -39,7 +39,11 @@ def verify_credential(credential: str) -> dict[str, Any]:
     cid = client_id()
     if not cid:
         raise ValueError("GOOGLE_CLIENT_ID not configured")
-    info = id_token.verify_oauth2_token(credential, google_requests.Request(), cid)
+    # A few seconds of clock drift (common on dev machines) would otherwise
+    # reject a fresh token as "used too early".
+    info = id_token.verify_oauth2_token(
+        credential, google_requests.Request(), cid, clock_skew_in_seconds=30
+    )
     if info.get("iss") not in _ISSUERS:
         raise ValueError("wrong issuer")
     if not info.get("email") or not info.get("email_verified"):

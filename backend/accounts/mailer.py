@@ -5,7 +5,7 @@ https://resend.com/docs/send-with-python. ``RESEND_API_KEY`` unset means
 ``is_configured()`` is False and callers answer 503 instead of pretending to
 send. ``MAIL_FROM`` is the sender users see and must be an address on a domain
 verified in the Resend dashboard; it defaults to
-``Vedic Panchanga <no-reply@vedicpanchanga.com>``.
+``Vedic Panchanga <no-reply@astronode.in>``.
 """
 
 from __future__ import annotations
@@ -15,8 +15,8 @@ from typing import Optional
 
 import resend
 
-DEFAULT_PUBLIC_URL = "https://vedicpanchanga.com"
-DEFAULT_FROM = "Vedic Panchanga <no-reply@vedicpanchanga.com>"
+DEFAULT_PUBLIC_URL = "https://astronode.in"
+DEFAULT_FROM = "Vedic Panchanga <no-reply@astronode.in>"
 
 
 def public_url() -> str:
@@ -59,7 +59,7 @@ def send_password_reset(to: str, token: str) -> None:
         to,
         "Reset your Vedic Panchanga password",
         "Someone (hopefully you) asked to reset the password for this email on\n"
-        "vedicpanchanga.com. Open the link below within one hour to choose a new\n"
+        "astronode.in. Open the link below within one hour to choose a new\n"
         f"password:\n\n{link}\n\n"
         "If you did not request this, you can ignore this message - your\n"
         "password stays unchanged.\n",

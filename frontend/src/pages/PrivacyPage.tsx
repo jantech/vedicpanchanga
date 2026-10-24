@@ -10,8 +10,8 @@ export function PrivacyPage() {
     applySeo({
       title: "Privacy Policy · Vedic Panchanga",
       description:
-        "Privacy Policy for vedicpanchanga.com - how we handle calculations, optional accounts and saved charts, the session cookie, Stripe payments and Google AdSense advertising.",
-      canonical: "https://vedicpanchanga.com/privacy",
+        "Privacy Policy for astronode.in - how we handle calculations, optional accounts and saved charts, the session cookie and Stripe payments.",
+      canonical: "https://astronode.in/privacy",
     });
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
@@ -45,11 +45,11 @@ export function PrivacyPage() {
       <Section title="Overview">
         <div className="space-y-3 text-meta text-ink leading-relaxed">
           <p>
-            <strong>vedicpanchanga.com</strong> ("we", "our", "the site") is a commercial,
-            advertising-supported service that provides Vedic astrological calculations (panchang,
+            <strong>astronode.in</strong> ("we", "our", "the site") is a commercial
+            service that provides Vedic astrological calculations (panchang,
             kundali, muhurta). Every calculator works without an account. An optional free account
-            (Google or email) lets you save charts, and an optional paid Premium plan removes
-            advertising. This policy explains what information is processed when you use the site
+            (Google or email) lets you save charts, and an optional paid Premium plan raises the
+            saved-chart limit. This policy explains what information is processed when you use the site
             and how it is handled.
           </p>
           <p>
@@ -196,56 +196,15 @@ export function PrivacyPage() {
               </a>
               .
             </li>
-            <li>
-              <strong>Google AdSense</strong> - serves advertisements to visitors without a Premium
-              plan (see the section below).
-            </li>
           </ul>
         </div>
       </Section>
 
-      <Section title="Cookies & Advertising">
+      <Section title="Cookies">
         <div className="space-y-3 text-meta text-ink leading-relaxed">
           <p>
-            Apart from the session cookie described above we set no cookies of our own. Advertising
-            cookies, when present, come from Google and its partners. Premium subscribers are not
-            shown ads and the advertising script is not loaded for them.
-          </p>
-          <p>
-            <strong>Google AdSense disclosure.</strong> Third-party vendors, including Google, use
-            cookies to serve ads based on a user's previous visits to this site and other sites on
-            the Internet. Google's use of advertising cookies enables it and its partners to serve
-            ads to users based on their visit to our sites and/or other sites on the Internet.
-          </p>
-          <p>You can opt out of personalized advertising:</p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>
-              <a
-                href="https://www.google.com/settings/ads"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-saffron hover:text-saffron-dark underline"
-              >
-                Google Ads Settings
-              </a>
-            </li>
-          </ul>
-          <p>
-            <strong>EEA / UK / Swiss users.</strong> Where required by law, Google's consent
-            management tooling will request your consent before serving personalized ads. You may
-            withdraw consent at any time via the same tool.
-          </p>
-          <p>
-            For more information on how Google uses data when you use partner sites or apps, see{" "}
-            <a
-              href="https://policies.google.com/technologies/partner-sites"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-saffron hover:text-saffron-dark underline"
-            >
-              Google's policy
-            </a>
-            . Most browsers also let you block or delete cookies from their settings.
+            Apart from the session cookie described above we set no cookies of our own. Most
+            browsers also let you block or delete cookies from their settings.
           </p>
         </div>
       </Section>

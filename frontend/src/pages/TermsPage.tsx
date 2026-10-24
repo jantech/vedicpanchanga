@@ -10,8 +10,8 @@ export function TermsPage() {
     applySeo({
       title: "Terms of Use · Vedic Panchanga",
       description:
-        "Terms of Use for vedicpanchanga.com - service is provided as-is with no warranty or guarantee of accuracy, plus the rules for optional accounts, saved charts and the Premium subscription.",
-      canonical: "https://vedicpanchanga.com/terms",
+        "Terms of Use for astronode.in - service is provided as-is with no warranty or guarantee of accuracy, plus the rules for optional accounts, saved charts and the Premium subscription.",
+      canonical: "https://astronode.in/terms",
     });
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
@@ -45,7 +45,7 @@ export function TermsPage() {
       <Section title="Acceptance of Terms">
         <div className="space-y-3 text-meta text-ink leading-relaxed">
           <p>
-            By accessing or using <strong>vedicpanchanga.com</strong> (the "site"), you agree to be
+            By accessing or using <strong>astronode.in</strong> (the "site"), you agree to be
             bound by these Terms of Use and the{" "}
             <a href="/privacy" className="text-saffron hover:text-saffron-dark underline">
               Privacy Policy
@@ -58,14 +58,14 @@ export function TermsPage() {
       <Section title="Service Description">
         <div className="space-y-3 text-meta text-ink leading-relaxed">
           <p>
-            The site is a commercial, advertising-supported service that offers astronomical and
+            The site is a commercial service that offers astronomical and
             astrological calculations including panchang, kundali, divisional charts, dasha, and
             muhurta search. Calculations are produced by software using the Swiss Ephemeris.
           </p>
           <p>
             All calculators are available without an account. Optionally you may create a free
             account to save charts, and subscribe to the paid <strong>Premium</strong> plan, which
-            removes advertising and raises the number of charts you can save.
+            raises the number of charts you can save.
           </p>
         </div>
       </Section>
@@ -140,16 +140,14 @@ export function TermsPage() {
             </li>
             <li>
               <strong>Failed payments.</strong> If a renewal payment fails we will retry it; if it
-              continues to fail your account returns to the free plan and ads are shown again. Saved
-              charts are kept.
+              continues to fail your account returns to the free plan. Saved charts are kept.
             </li>
             <li>
               <strong>Price changes.</strong> We may change prices for future periods and will
               notify subscribers by email before the change takes effect at their next renewal.
             </li>
             <li>
-              <strong>What Premium is.</strong> Premium removes advertising that we serve and raises
-              the saved-chart limit. It does not alter the calculations, which remain the same for
+              <strong>What Premium is.</strong> Premium raises the saved-chart limit. It does not alter the calculations, which remain the same for
               all users and carry the same disclaimers below.
             </li>
           </ul>
@@ -207,21 +205,6 @@ export function TermsPage() {
             <li>use the site for any unlawful purpose or to violate the rights of others.</li>
           </ul>
           <p>We may rate-limit, suspend, or block traffic or accounts that violate these terms.</p>
-        </div>
-      </Section>
-
-      <Section title="Advertising">
-        <div className="space-y-3 text-meta text-ink leading-relaxed">
-          <p>
-            The free plan is supported by advertising. Ads are served by Google AdSense and its
-            partners; Premium subscribers are not shown them. We do not endorse and are not
-            responsible for the content of third-party advertisements or the products and services
-            they promote. See the{" "}
-            <a href="/privacy" className="text-saffron hover:text-saffron-dark underline">
-              Privacy Policy
-            </a>{" "}
-            for details on cookies and ad personalization.
-          </p>
         </div>
       </Section>
 

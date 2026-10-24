@@ -41,7 +41,7 @@
     {
       "id": 25,
       "type": "stat",
-      "title": "vedicpanchanga.com",
+      "title": "astronode.in",
       "description": "",
       "datasource": {
         "type": "prometheus",

@@ -8,7 +8,7 @@
 
 带有现代 Web 界面的 Drik 历法 (Panchanga) 计算器。可计算任意日期 (公元前 5000 – 公元 5000) 任意地点的传统印度教 Panchanga 元素、十六分盘 (D1–D60)、Vimshottari Daśā、Aṣṭakavarga,以及吉祥的 Muhūrta 时段。
 
-**网站**: <https://vedicpanchanga.com>
+**网站**: <https://astronode.in>
 
 ⭐ 如果本项目对你有帮助,请给仓库一颗星 — 这能帮助更多人发现它。
 
@@ -32,7 +32,7 @@
 
 ```bash
 git clone https://github.com/bidyashish/vedicpanchanga.com
-cd vedicpanchanga.com
+cd astronode.in
 
 # 1) 后端 (终端 1) — FastAPI 监听 :8001
 cd backend

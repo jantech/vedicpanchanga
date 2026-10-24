@@ -8,7 +8,7 @@
 
 Drik-Panchang-Rechner mit moderner Web-Oberfläche. Berechnet die traditionellen Elemente des hinduistischen Panchang, die 16 Teilcharts (D1–D60), Vimshottari Daśā, Aṣṭakavarga sowie günstige Muhūrta-Fenster für jedes Datum (5000 v. Chr. – 5000 n. Chr.) und jeden Ort.
 
-**Website**: <https://vedicpanchanga.com>
+**Website**: <https://astronode.in>
 
 ⭐ Wenn dir das Projekt nützt, vergib bitte einen Stern auf GitHub — so finden andere das Tool leichter.
 
@@ -32,7 +32,7 @@ Benötigt Python 3.10+ und Node.js 20+.
 
 ```bash
 git clone https://github.com/bidyashish/vedicpanchanga.com
-cd vedicpanchanga.com
+cd astronode.in
 
 # 1) Backend (Terminal 1) — FastAPI auf :8001
 cd backend

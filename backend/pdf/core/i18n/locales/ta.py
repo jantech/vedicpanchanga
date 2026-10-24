@@ -46,7 +46,7 @@ LABELS: Dict[str, str] = {
     "sign_no": "ராசி எண்",
     "total": "மொத்தம்",
     "years_short": "ஆண்டுகள்",
-    "footer": "vedicpanchanga.com மூலம் உருவாக்கப்பட்டது",
+    "footer": "astronode.in மூலம் உருவாக்கப்பட்டது",
     "saturday": "சனிக்கிழமை",
     "sunday": "ஞாயிற்றுக்கிழமை",
     "monday": "திங்கட்கிழமை",

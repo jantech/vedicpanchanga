@@ -1023,7 +1023,7 @@ const pt: Record<string, string> = {
   auth_modal_title_signin: "Bem-vindo de volta",
   auth_modal_title_signup: "Crie a sua conta gratuita",
   auth_modal_blurb:
-    "Guarde os seus mapas, abra-os em qualquer dispositivo e navegue sem anúncios com o Premium.",
+    "Guarde os seus mapas, abra-os em qualquer dispositivo e guarde mais com o Premium.",
   auth_reason_save: "Inicie sessão para guardar este mapa na sua conta.",
   auth_terms_notice: "Ao continuar, aceita os nossos {0} e a nossa {1}.",
   auth_error_generic: "Algo correu mal. Tente novamente.",
@@ -1048,10 +1048,10 @@ const pt: Record<string, string> = {
   acct_plan_premium: "Premium",
   acct_premium_badge: "Premium",
   acct_premium_desc:
-    "Navegação sem anúncios e até {0} mapas guardados. Obrigado por apoiar o site.",
-  acct_free_desc: "Os anúncios ajudam a manter o site gratuito. Guarde até {0} mapas.",
+    "Até {0} mapas guardados. Obrigado por apoiar o site.",
+  acct_free_desc: "Guarde até {0} mapas.",
   acct_upgrade: "Tornar-se Premium",
-  acct_upgrade_hint: "Remova todos os anúncios e guarde mais mapas. Cancele quando quiser.",
+  acct_upgrade_hint: "Guarde mais mapas. Cancele quando quiser.",
   acct_plan_monthly: "Mensal",
   acct_plan_yearly: "Anual",
   acct_renews: "Renova a {0}",

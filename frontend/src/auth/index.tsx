@@ -2,9 +2,7 @@
 // has enabled (Google / email / billing), and the one global AuthModal.
 //
 // `status` goes "loading" -> "ready" exactly once, after /api/auth/config and
-// /api/auth/me have both answered (or failed). The AdSense gate in App.tsx
-// waits for "ready" so a premium user never sees ads flash in before their
-// session is known. When the backend has accounts disabled (no SESSION_SECRET)
+// /api/auth/me have both answered (or failed). When the backend has accounts disabled (no SESSION_SECRET)
 // `config.enabled` is false and every account affordance stays hidden - the
 // site then looks exactly as it did before accounts existed.
 

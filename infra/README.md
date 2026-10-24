@@ -1,7 +1,7 @@
 # infra/
 
 Operational scripts for provisioning, deploying and monitoring the VPS
-that runs <https://vedicpanchanga.com>. All paths assume the canonical
+that runs <https://astronode.in>. All paths assume the canonical
 clone location `/apps/panchanga`.
 
 > All scripts are **idempotent** unless marked otherwise - re-running
@@ -37,7 +37,7 @@ Nginx :80 -> 301 -> :443 (TLS 1.2/1.3, HSTS, real-IP from CF, X-Frame-Options,
 
 > `/grafana/` is the **Grafana** monitoring UI. The application's own readiness
 > probe is `GET /api/health`, also exposed at `/health`
-> (<https://vedicpanchanga.com/health>): 200 when the Swiss Ephemeris data is
+> (<https://astronode.in/health>): 200 when the Swiss Ephemeris data is
 > present, 503 otherwise. The exporters (Prometheus
 > 9090, Node Exporter 9100, Blackbox 9115) and Grafana (3002) all bind to
 > 127.0.0.1; only Grafana is reachable, and only via the `/grafana/` proxy. See
@@ -86,9 +86,9 @@ independent: leave a block commented out and its UI simply does not appear.
 
 | Integration | Where to configure | What to paste into `.env.local` |
 |---|---|---|
-| Google Sign-In | Google Cloud Console, APIs & Services, Credentials, OAuth 2.0 Client (Web). Authorized JavaScript origins: `https://vedicpanchanga.com` (+ `http://localhost:3121` for dev). No redirect URI needed (ID-token flow). | `GOOGLE_CLIENT_ID` |
+| Google Sign-In | Google Cloud Console, APIs & Services, Credentials, OAuth 2.0 Client (Web). Authorized JavaScript origins: `https://astronode.in` (+ `http://localhost:3121` for dev). No redirect URI needed (ID-token flow). | `GOOGLE_CLIENT_ID` |
 | Password-reset mail | [Resend](https://resend.com): verify the sending domain (DNS records shown in the dashboard), create an API key with sending access. | `RESEND_API_KEY`, `MAIL_FROM` (address on the verified domain) |
-| Premium (Stripe) | One Product with a monthly and a yearly recurring Price. Webhook endpoint `https://vedicpanchanga.com/api/billing/webhook` subscribed to `checkout.session.completed` and `customer.subscription.*`. Enable the Customer Portal in Stripe settings. | `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_PRICE_MONTHLY`, `STRIPE_PRICE_YEARLY` |
+| Premium (Stripe) | One Product with a monthly and a yearly recurring Price. Webhook endpoint `https://astronode.in/api/billing/webhook` subscribed to `checkout.session.completed` and `customer.subscription.*`. Enable the Customer Portal in Stripe settings. | `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_PRICE_MONTHLY`, `STRIPE_PRICE_YEARLY` |
 | DB replica | Cloudflare D1: `wrangler d1 create panchanga-accounts` (or dashboard, Storage & Databases, D1) gives the `database_id`; an API token with the **D1 Edit** permission (My Profile, API Tokens); account id from the dashboard sidebar. D1 keeps 30 days of point-in-time history. | `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN`, `D1_DATABASE_ID` |
 
 After editing `.env.local`: `sudo systemctl restart panchanga-backend`. The
@@ -162,7 +162,7 @@ Installs Prometheus (2.53), Node Exporter (1.8.1), Blackbox Exporter (0.25),
 and Grafana, then provisions all of them from the version-controlled files in
 [`grafana/`](grafana/). Everything binds to `127.0.0.1`. Grafana is served only
 through the Nginx `/grafana/` proxy; the other exporters are reachable only via
-an SSH tunnel. The blackbox job probes `https://vedicpanchanga.com/api/health`
+an SSH tunnel. The blackbox job probes `https://astronode.in/api/health`
 (end-to-end), the homepage, and the origin backend, surfaced on the
 **Application Monitoring** dashboard (`/grafana/d/apps-mon/application-monitoring`).
 
@@ -192,7 +192,7 @@ bash /apps/panchanga/infra/auto-update-cron.sh   # manual deploy
   `chmod 600` on the key. Re-run `setup-vps.sh`.
 * **Cron updates not happening** - `tail -f /var/log/panchanga-auto-update.log`.
 * **No "Sign in" button on the site** - `SESSION_SECRET` is unset or empty in
-  `backend/.env.local`; `curl -s https://vedicpanchanga.com/api/auth/config`
+  `backend/.env.local`; `curl -s https://astronode.in/api/auth/config`
   shows `"enabled": false`. Google button missing with accounts enabled means
   `GOOGLE_CLIENT_ID` is unset or the origin is not authorized in Google Cloud.
 * **Users signed out after every deploy** - `SESSION_SECRET` changed. It must

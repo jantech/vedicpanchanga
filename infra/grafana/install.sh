@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Reproducible monitoring installer for vedicpanchanga.com (and clones)
+# Reproducible monitoring installer for astronode.in (and clones)
 # ---------------------------------------------------------------------
 # Installs / refreshes the full observability stack and provisions it from the
 # version-controlled files in this folder:
@@ -43,7 +43,7 @@ NGINX_EXP_VERSION="1.1.0"
 CADVISOR_TAG="v0.52.1"      # >= v0.52 required: older Docker clients (API 1.41)
                             # are rejected by current Docker daemons (min 1.44)
                             # and container name labels silently disappear.
-GRAFANA_ROOT_URL="https://vedicpanchanga.com/grafana/"
+GRAFANA_ROOT_URL="https://astronode.in/grafana/"
 GRAFANA_PORT="3002"
 ARCH="linux-amd64"
 

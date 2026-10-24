@@ -1024,7 +1024,7 @@ const es: Record<string, string> = {
   auth_modal_title_signin: "Bienvenido de nuevo",
   auth_modal_title_signup: "Crea tu cuenta gratuita",
   auth_modal_blurb:
-    "Guarda tus cartas, ábrelas en cualquier dispositivo y navega sin anuncios con Premium.",
+    "Guarda tus cartas, ábrelas en cualquier dispositivo y guarda más con Premium.",
   auth_reason_save: "Inicia sesión para guardar esta carta en tu cuenta.",
   auth_terms_notice: "Al continuar aceptas nuestros {0} y nuestra {1}.",
   auth_error_generic: "Algo salió mal. Inténtalo de nuevo.",
@@ -1049,10 +1049,10 @@ const es: Record<string, string> = {
   acct_plan_premium: "Premium",
   acct_premium_badge: "Premium",
   acct_premium_desc:
-    "Navegación sin anuncios y hasta {0} cartas guardadas. Gracias por apoyar el sitio.",
-  acct_free_desc: "Los anuncios ayudan a mantener el sitio gratis. Guarda hasta {0} cartas.",
+    "Hasta {0} cartas guardadas. Gracias por apoyar el sitio.",
+  acct_free_desc: "Guarda hasta {0} cartas.",
   acct_upgrade: "Hazte Premium",
-  acct_upgrade_hint: "Elimina todos los anuncios y guarda más cartas. Cancela cuando quieras.",
+  acct_upgrade_hint: "Guarda más cartas. Cancela cuando quieras.",
   acct_plan_monthly: "Mensual",
   acct_plan_yearly: "Anual",
   acct_renews: "Se renueva el {0}",

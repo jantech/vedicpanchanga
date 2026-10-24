@@ -31,12 +31,12 @@ Interactive Swagger UI: <http://localhost:8001/docs>.
 
 | File | Key | Purpose |
 |------|-----|---------|
-| `.env` | `CORS_ORIGINS` | Comma-separated allowlist. Falls back to `https://vedicpanchanga.com,http://localhost:3121` when unset. `infra/setup-vps.sh` rewrites this file on every deploy. |
+| `.env` | `CORS_ORIGINS` | Comma-separated allowlist. Falls back to `https://astronode.in,http://localhost:3121` when unset. `infra/setup-vps.sh` rewrites this file on every deploy. |
 | `.env.local` | `API_KEYS` | Optional. Comma-separated keys; unset means the API is open. Clients send `Authorization: Bearer <key>` or `X-API-Key: <key>`. See `auth.py`. |
 | `.env.local` | `AUTH_EXEMPT_ORIGINS` | Origins that stay keyless when `API_KEYS` is set. Defaults to the site itself plus localhost dev. |
 | `.env.local` | `SESSION_SECRET` | Master switch for accounts and the signing key for the `vp_session` cookie. Unset = `/api/auth/config` reports `enabled: false` and nothing is written to disk. Must be identical across uvicorn workers. |
 | `.env.local` | `DATABASE_PATH` | SQLite file. Default `backend/data/app.db` (WAL mode, created on first use). |
-| `.env.local` | `PUBLIC_URL` | Origin used in reset emails and Stripe redirects. Default `https://vedicpanchanga.com`. |
+| `.env.local` | `PUBLIC_URL` | Origin used in reset emails and Stripe redirects. Default `https://astronode.in`. |
 | `.env.local` | `GOOGLE_CLIENT_ID` | OAuth 2.0 Web client id. Unset = no Google button. |
 | `.env.local` | `RESEND_API_KEY`, `MAIL_FROM` | Password-reset mail through [Resend](https://resend.com/docs/send-with-python). `MAIL_FROM` must be on a domain verified in Resend. Unset `RESEND_API_KEY` = reset endpoint returns 503 and the UI hides "Forgot password". |
 | `.env.local` | `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_PRICE_MONTHLY`, `STRIPE_PRICE_YEARLY` | Premium subscription. All four needed for the upgrade UI. |
@@ -196,7 +196,7 @@ pdf/
 ├── report.py                  orchestrator: page 1 (Traditional summary), then each
 │                              detail page through _track() so the Index knows start
 │                              pages. _ReportPDF overrides fpdf2's footer() so every
-│                              page gets "vedicpanchanga.com" + "Page N".
+│                              page gets "astronode.in" + "Page N".
 ├── core/                      rendering primitives, re-exported via core/__init__.py
 │   ├── text.py                font registration (8 Noto faces: Latin/Cyrillic,
 │   │                          Devanagari, Tamil, Bengali, Arabic, Hebrew, SC, JP)

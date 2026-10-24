@@ -46,7 +46,7 @@ LABELS: Dict[str, str] = {
     "sign_no": "N.º de signo",
     "total": "Total",
     "years_short": "Años",
-    "footer": "Generado por vedicpanchanga.com",
+    "footer": "Generado por astronode.in",
     "saturday": "Sábado",
     "sunday": "Domingo",
     "monday": "Lunes",

@@ -46,7 +46,7 @@ LABELS: Dict[str, str] = {
     "sign_no": "宫位",
     "total": "合计",
     "years_short": "年",
-    "footer": "由 vedicpanchanga.com 生成",
+    "footer": "由 astronode.in 生成",
     "saturday": "星期六",
     "sunday": "星期日",
     "monday": "星期一",

@@ -46,7 +46,7 @@ LABELS: Dict[str, str] = {
     "sign_no": "رقم البرج",
     "total": "المجموع",
     "years_short": "سنوات",
-    "footer": "أُنشئ بواسطة vedicpanchanga.com",
+    "footer": "أُنشئ بواسطة astronode.in",
     "saturday": "السبت",
     "sunday": "الأحد",
     "monday": "الاثنين",

@@ -232,7 +232,7 @@ def test_login_rate_limited(client):
 def _fake_google(monkeypatch, sub="g-123", email="goog@example.com", verified=True):
     monkeypatch.setenv("GOOGLE_CLIENT_ID", "abc.apps.googleusercontent.com")
 
-    def fake_verify(token, request, audience):
+    def fake_verify(token, request, audience, **kwargs):
         assert audience == "abc.apps.googleusercontent.com"
         if token == "bad":
             raise ValueError("Token expired")

@@ -45,7 +45,7 @@ def page_footer(pdf: FPDF) -> None:
     pdf.set_draw_color(220, 220, 220)
     pdf.set_line_width(0.4)
     pdf.line(MARGIN, y, pdf.w - MARGIN, y)
-    draw_text(pdf, MARGIN, y + 9, "vedicpanchanga.com", LATIN_REGULAR, REGULAR, 8)
+    draw_text(pdf, MARGIN, y + 9, "astronode.in", LATIN_REGULAR, REGULAR, 8)
     draw_text(
         pdf,
         pdf.w - MARGIN,

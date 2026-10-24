@@ -14,4 +14,4 @@ Allow: /favicon.png
 Allow: /.well-known/api-catalog
 Allow: /llms.txt
 
-Sitemap: https://vedicpanchanga.com/sitemap.xml
+Sitemap: https://astronode.in/sitemap.xml

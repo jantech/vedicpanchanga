@@ -3,7 +3,7 @@ import { Section } from "@/components/panchang/Section";
 import { richText } from "@/lib/richText";
 import { ArticleLayout } from "./ArticleLayout";
 
-const SITE = "https://vedicpanchanga.com";
+const SITE = "https://astronode.in";
 
 export function Nakshatras() {
   const { t } = useI18n();

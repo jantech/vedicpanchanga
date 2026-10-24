@@ -92,7 +92,7 @@ def test_exempt_origin_needs_no_key(client, auth_on):
 
 def test_referer_fallback_for_same_origin_get(client, auth_on):
     # Same-origin GET fetches omit Origin; the Referer prefix must match.
-    r = client.get(PROBE, headers={"Referer": "https://vedicpanchanga.com/panchang"})
+    r = client.get(PROBE, headers={"Referer": "https://astronode.in/panchang"})
     assert r.status_code == 200
 
 

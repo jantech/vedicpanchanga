@@ -8,7 +8,7 @@
 
 モダンな Web インターフェースを備えた Drik パンチャーンガ計算機。任意の日付 (紀元前 5000 年 〜 紀元後 5000 年) と任意の場所について、伝統的なヒンドゥー暦の要素・16 種類の分割図 (D1〜D60)・ヴィムショッタリー・ダシャー・アシュタカヴァルガ・吉祥なムフールタを計算します。
 
-**サイト**: <https://vedicpanchanga.com>
+**サイト**: <https://astronode.in>
 
 ⭐ このプロジェクトが役に立ったらリポジトリにスターをお願いします — 他の人がこのツールを見つけやすくなります。
 
@@ -32,7 +32,7 @@ Python 3.10+ と Node.js 20+ が必要です。
 
 ```bash
 git clone https://github.com/bidyashish/vedicpanchanga.com
-cd vedicpanchanga.com
+cd astronode.in
 
 # 1) バックエンド (ターミナル 1) — :8001 で FastAPI
 cd backend

@@ -78,5 +78,5 @@
 
   <!-- Footer rule + domain -->
   <line x1="80" y1="540" x2="560" y2="540" stroke="#cc5200" stroke-width="1.5" opacity="0.4"/>
-  <text x="80" y="575" class="domain" font-size="22">vedicpanchanga.com</text>
+  <text x="80" y="575" class="domain" font-size="22">astronode.in</text>
 </svg>

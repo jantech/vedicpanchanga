@@ -12,7 +12,7 @@ export function Footer() {
         <p className="text-center text-mini text-ink-soft">
           {t("computed_with")} ·{" "}
           <a href="/" className="text-saffron hover:text-saffron-dark font-semibold">
-            vedicpanchanga.com
+            astronode.in
           </a>
         </p>
         <nav

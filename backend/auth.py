@@ -39,7 +39,7 @@ from fastapi import HTTPException, Request
 EXEMPT_PATHS = {"/api", "/api/", "/api/health", "/api/billing/webhook"}
 
 _DEFAULT_EXEMPT_ORIGINS = (
-    "https://vedicpanchanga.com,https://www.vedicpanchanga.com,"
+    "https://astronode.in,https://www.astronode.in,"
     "http://localhost:3121,http://127.0.0.1:3121"
 )
 

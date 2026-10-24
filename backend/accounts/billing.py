@@ -1,4 +1,4 @@
-"""``/api/billing/*`` - Stripe subscription that removes ads ("Premium").
+"""``/api/billing/*`` - Stripe subscription for the higher saved-chart limit ("Premium").
 
 Flow
 ----

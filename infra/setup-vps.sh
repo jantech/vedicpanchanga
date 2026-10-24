@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# VPS setup script for vedicpanchanga.com
+# VPS setup script for astronode.in
 # Provisions Python/FastAPI backend + Vite/React frontend behind Nginx.
 # Tested on Ubuntu 22.04 / 24.04. Run:  sudo bash infra/setup-vps.sh
 
@@ -80,7 +80,7 @@ chown -R "$RUN_USER:$RUN_GROUP" "$APP_DIR/backend/venv"
 # served same-origin via Nginx so cross-origin XHR is impossible from the app
 # itself; this lockdown blocks third-party sites from calling the API directly.
 cat > "$APP_DIR/backend/.env" <<'EOF'
-CORS_ORIGINS=https://vedicpanchanga.com,https://www.vedicpanchanga.com
+CORS_ORIGINS=https://astronode.in,https://www.astronode.in
 EOF
 chown "$RUN_USER:$RUN_GROUP" "$APP_DIR/backend/.env"
 chmod 640 "$APP_DIR/backend/.env"
@@ -96,13 +96,13 @@ if [ ! -f "$ENV_LOCAL" ]; then
 # Server-side secrets. Not in git; setup-vps.sh never overwrites this file.
 # Delete the SESSION_SECRET line to switch accounts off entirely.
 SESSION_SECRET=$SESSION_SECRET
-PUBLIC_URL=https://vedicpanchanga.com
+PUBLIC_URL=https://astronode.in
 # GOOGLE_CLIENT_ID=
 # STRIPE_SECRET_KEY=
 # STRIPE_WEBHOOK_SECRET=
 # STRIPE_PRICE_MONTHLY=
 # STRIPE_PRICE_YEARLY=
-# RESEND_API_KEY= MAIL_FROM=Vedic Panchanga <no-reply@vedicpanchanga.com>
+# RESEND_API_KEY= MAIL_FROM=Vedic Panchanga <no-reply@astronode.in>
 # CLOUDFLARE_ACCOUNT_ID= CLOUDFLARE_API_TOKEN= D1_DATABASE_ID=
 EOF
     echo "  Created $ENV_LOCAL with a new SESSION_SECRET"
@@ -289,7 +289,7 @@ map \$http_accept \$serve_markdown {
 server {
     listen 80;
     listen [::]:80;
-    server_name vedicpanchanga.com www.vedicpanchanga.com;
+    server_name astronode.in www.astronode.in;
     access_log /var/log/nginx/vedicpanchanga/access.log security;
     error_log  /var/log/nginx/vedicpanchanga/error.log warn;
     return 301 https://\$host\$request_uri;
@@ -300,7 +300,7 @@ server {
     listen 443 ssl;
     listen [::]:443 ssl;
     http2 on;
-    server_name vedicpanchanga.com www.vedicpanchanga.com;
+    server_name astronode.in www.astronode.in;
     access_log /var/log/nginx/vedicpanchanga/access.log security;
     error_log  /var/log/nginx/vedicpanchanga/error.log warn;
 
@@ -415,7 +415,7 @@ server {
     }
 
     location /api/ {
-        # valid_referers none server_names *.vedicpanchanga.com vedicpanchanga.com;
+        # valid_referers none server_names *.astronode.in astronode.in;
         # if (\$invalid_referer) {
         #     return 403;
         # }
@@ -455,7 +455,7 @@ map \$http_accept \$serve_markdown {
 
 server {
     listen 80;
-    server_name vedicpanchanga.com www.vedicpanchanga.com;
+    server_name astronode.in www.astronode.in;
     access_log /var/log/nginx/vedicpanchanga/access.log security;
     error_log  /var/log/nginx/vedicpanchanga/error.log warn;
 
@@ -544,7 +544,7 @@ server {
     }
 
     location /api/ {
-        # valid_referers none server_names *.vedicpanchanga.com vedicpanchanga.com;
+        # valid_referers none server_names *.astronode.in astronode.in;
         # if (\$invalid_referer) {
         #     return 403;
         # }
@@ -618,10 +618,10 @@ if [ "$TLS_ENABLED" = "1" ]; then
 echo "Next steps:"
 echo "  1. Cloudflare → SSL/TLS → Overview → set mode to 'Full (strict)'"
 echo "  2. Install monitoring (optional):  sudo bash $APP_DIR/infra/grafana/install.sh"
-echo "     Grafana is then served at https://vedicpanchanga.com/grafana/ (ports stay localhost-only)"
+echo "     Grafana is then served at https://astronode.in/grafana/ (ports stay localhost-only)"
 else
 echo "Next steps:"
-echo "  1. Cloudflare DNS: A record vedicpanchanga.com → this server IP (proxied)"
+echo "  1. Cloudflare DNS: A record astronode.in → this server IP (proxied)"
 echo "  2. Cloudflare → SSL/TLS → Origin Server → Create Certificate (15 years)"
 echo "  3. Paste cert + key into /etc/ssl/cloudflare/origin.{pem,key}"
 echo "       sudo mkdir -p /etc/ssl/cloudflare"
@@ -634,8 +634,8 @@ echo "  6. (Meanwhile) Cloudflare SSL/TLS mode 'Flexible' brings the site up imm
 fi
 echo
 if systemctl is-active --quiet grafana-server 2>/dev/null; then
-    echo "Grafana:  https://vedicpanchanga.com/grafana/  (proxied; binds 127.0.0.1:3002)"
-    echo "  App Monitoring dashboard:  https://vedicpanchanga.com/grafana/d/apps-mon/application-monitoring"
+    echo "Grafana:  https://astronode.in/grafana/  (proxied; binds 127.0.0.1:3002)"
+    echo "  App Monitoring dashboard:  https://astronode.in/grafana/d/apps-mon/application-monitoring"
     echo
 fi
 echo "Useful commands:"

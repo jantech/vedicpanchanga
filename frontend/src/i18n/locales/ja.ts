@@ -1016,7 +1016,7 @@ const ja: Record<string, string> = {
   auth_modal_title_signin: "おかえりなさい",
   auth_modal_title_signup: "無料アカウントを作成",
   auth_modal_blurb:
-    "チャートを保存し、どの端末からでも開けます。プレミアムなら広告も非表示になります。",
+    "チャートを保存し、どの端末からでも開けます。プレミアムならさらに多く保存できます。",
   auth_reason_save: "このチャートをアカウントに保存するにはログインしてください。",
   auth_terms_notice: "続行すると、{0}と{1}に同意したものとみなされます。",
   auth_error_generic: "問題が発生しました。もう一度お試しください。",
@@ -1042,10 +1042,10 @@ const ja: Record<string, string> = {
   acct_plan_premium: "プレミアム",
   acct_premium_badge: "プレミアム",
   acct_premium_desc:
-    "広告なしで閲覧でき、チャートを最大 {0} 件保存できます。サイトへのご支援ありがとうございます。",
-  acct_free_desc: "広告はサイトの無料提供を支えています。チャートは最大 {0} 件保存できます。",
+    "チャートを最大 {0} 件保存できます。サイトへのご支援ありがとうございます。",
+  acct_free_desc: "チャートは最大 {0} 件保存できます。",
   acct_upgrade: "プレミアムにする",
-  acct_upgrade_hint: "すべての広告を非表示にし、より多くのチャートを保存。いつでも解約できます。",
+  acct_upgrade_hint: "より多くのチャートを保存。いつでも解約できます。",
   acct_plan_monthly: "月額",
   acct_plan_yearly: "年額",
   acct_renews: "{0} に更新",

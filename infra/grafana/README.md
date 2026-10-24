@@ -1,6 +1,6 @@
 # infra/grafana/
 
-Version-controlled, reproducible monitoring stack for this VPS (vedicpanchanga.com
+Version-controlled, reproducible monitoring stack for this VPS (astronode.in
 plus the other sites it hosts). Everything here is the source of truth: the
 installer copies these files into place, so the live config can always be
 rebuilt from git - or replicated onto a brand-new server.
@@ -120,7 +120,7 @@ an `origin` probe (the local app port, isolating the app from the network):
 
 | app            | public                              | origin                            |
 |----------------|-------------------------------------|-----------------------------------|
-| vedicpanchanga | https://vedicpanchanga.com/ + /api/health | http://127.0.0.1:8001/api/health |
+| vedicpanchanga | https://astronode.in/ + /api/health | http://127.0.0.1:8001/api/health |
 | fizgpt         | https://fizgpt.com/                 | http://127.0.0.1:3000/            |
 | exportaichat   | https://exportaichat.com/           | http://127.0.0.1:3003/            |
 

@@ -1,7 +1,7 @@
 {
   "uid": "apps-mon",
   "title": "Application Monitoring",
-  "description": "Application performance, uptime, HTTP/TLS detail and host health for vedicpanchanga.com.",
+  "description": "Application performance, uptime, HTTP/TLS detail and host health for astronode.in.",
   "tags": [
     "vedicpanchanga",
     "application",
@@ -20,8 +20,8 @@
   "refresh": "30s",
   "links": [
     {
-      "title": "Open vedicpanchanga.com",
-      "url": "https://vedicpanchanga.com/",
+      "title": "Open astronode.in",
+      "url": "https://astronode.in/",
       "type": "link",
       "icon": "external link",
       "tooltip": "Open the live site",
@@ -29,7 +29,7 @@
     },
     {
       "title": "Health JSON",
-      "url": "https://vedicpanchanga.com/health",
+      "url": "https://astronode.in/health",
       "type": "link",
       "icon": "doc",
       "tooltip": "Raw /health response",
@@ -92,7 +92,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "probe_success{instance=\"https://vedicpanchanga.com/api/health\"}"
+          "expr": "probe_success{instance=\"https://astronode.in/api/health\"}"
         }
       ],
       "fieldConfig": {
@@ -174,7 +174,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "avg_over_time(probe_success{instance=\"https://vedicpanchanga.com/api/health\"}[24h]) * 100"
+          "expr": "avg_over_time(probe_success{instance=\"https://astronode.in/api/health\"}[24h]) * 100"
         }
       ],
       "fieldConfig": {
@@ -239,7 +239,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "probe_duration_seconds{instance=\"https://vedicpanchanga.com/api/health\"}"
+          "expr": "probe_duration_seconds{instance=\"https://astronode.in/api/health\"}"
         }
       ],
       "fieldConfig": {
@@ -304,7 +304,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "probe_http_status_code{instance=\"https://vedicpanchanga.com/api/health\"}"
+          "expr": "probe_http_status_code{instance=\"https://astronode.in/api/health\"}"
         }
       ],
       "fieldConfig": {
@@ -367,7 +367,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "(probe_ssl_earliest_cert_expiry{instance=\"https://vedicpanchanga.com/api/health\"} - time()) / 86400"
+          "expr": "(probe_ssl_earliest_cert_expiry{instance=\"https://astronode.in/api/health\"} - time()) / 86400"
         }
       ],
       "fieldConfig": {
@@ -1250,7 +1250,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "probe_http_duration_seconds{instance=\"https://vedicpanchanga.com/api/health\"}",
+          "expr": "probe_http_duration_seconds{instance=\"https://astronode.in/api/health\"}",
           "legendFormat": "{{phase}}"
         }
       ],
@@ -1309,7 +1309,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "probe_dns_lookup_time_seconds{instance=\"https://vedicpanchanga.com/api/health\"}"
+          "expr": "probe_dns_lookup_time_seconds{instance=\"https://astronode.in/api/health\"}"
         }
       ],
       "fieldConfig": {
@@ -1374,7 +1374,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "probe_http_redirects{instance=\"https://vedicpanchanga.com/api/health\"}"
+          "expr": "probe_http_redirects{instance=\"https://astronode.in/api/health\"}"
         }
       ],
       "fieldConfig": {
@@ -1429,7 +1429,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "probe_http_content_length{instance=\"https://vedicpanchanga.com/api/health\"}"
+          "expr": "probe_http_content_length{instance=\"https://astronode.in/api/health\"}"
         }
       ],
       "fieldConfig": {
@@ -1485,7 +1485,7 @@
             "uid": "prometheus"
           },
           "editorMode": "code",
-          "expr": "probe_http_ssl{instance=\"https://vedicpanchanga.com/api/health\"}"
+          "expr": "probe_http_ssl{instance=\"https://astronode.in/api/health\"}"
         }
       ],
       "fieldConfig": {

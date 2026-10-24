@@ -31,8 +31,7 @@ const NON_LATIN = new Set(["hi", "ne", "ta", "bn", "zh", "ja", "ru", "ar", "fa",
 // scientific star/catalog names. Keep this list minimal and in sync with the
 // i18n rule documented in CLAUDE.md.
 const ALLOW = [
-  "vedicpanchanga.com",
-  "AdSense",
+  "astronode.in",
   "Google",
   "PDF",
   "Swiss Ephemeris",

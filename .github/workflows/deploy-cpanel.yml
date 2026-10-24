@@ -1,0 +1,125 @@
+name: Deploy to cPanel
+
+# Runs after CI passes on main (or by hand from the Actions tab).
+# Needs repo secrets FTP_HOST, FTP_USERNAME, FTP_PASSWORD and repo variables
+# FTP_FRONTEND_DIR, FTP_BACKEND_DIR - see infra/cpanel/README.md.
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-cpanel
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Build and upload
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: https://astronode.in
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 2
+
+      - name: Check deploy settings
+        env:
+          FTP_FRONTEND_DIR: ${{ vars.FTP_FRONTEND_DIR }}
+          FTP_BACKEND_DIR: ${{ vars.FTP_BACKEND_DIR }}
+        run: |
+          for v in FTP_FRONTEND_DIR FTP_BACKEND_DIR; do
+            if [ -z "${!v}" ]; then echo "::error::Repo variable $v is not set"; exit 1; fi
+          done
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Build frontend (same-origin /api)
+        working-directory: frontend
+        env:
+          VITE_BACKEND_URL: ""
+        run: |
+          npm ci
+          npm run build
+          cp ../infra/cpanel/htaccess dist/.htaccess
+
+      - name: Upload frontend
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: frontend/dist/
+          server-dir: ${{ vars.FTP_FRONTEND_DIR }}
+          state-name: .ftp-deploy-frontend-state.json
+
+      - name: Upload backend
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: backend/
+          server-dir: ${{ vars.FTP_BACKEND_DIR }}
+          state-name: .ftp-deploy-backend-state.json
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/__pycache__/**
+            **/*.pyc
+            .env
+            .env.local
+            venv/**
+            .venv/**
+            tests/**
+            data/**
+            .pytest_cache/**
+            .ruff_cache/**
+            tmp/**
+
+      - name: Restart Passenger
+        run: |
+          mkdir -p restart
+          date -u +%FT%TZ > restart/restart.txt
+
+      - name: Upload restart trigger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: restart/
+          server-dir: ${{ vars.FTP_BACKEND_DIR }}/tmp/
+          state-name: .ftp-deploy-restart-state.json
+
+      - name: Warn if dependencies changed
+        run: |
+          if git diff --name-only HEAD~1 HEAD | grep -qx 'backend/requirements.txt'; then
+            echo "::warning::backend/requirements.txt changed. In cPanel > Setup Python App, click Run Pip Install, then Restart."
+          fi
+
+      - name: Health check
+        run: |
+          for i in 1 2 3 4 5 6; do
+            if curl -fsS --max-time 20 "$SITE_URL/api/health" | grep -q '"status":"ok"'; then
+              echo "Healthy"; exit 0
+            fi
+            echo "Attempt $i failed, retrying"; sleep 15
+          done
+          echo "::error::$SITE_URL/api/health did not return ok"
+          exit 1

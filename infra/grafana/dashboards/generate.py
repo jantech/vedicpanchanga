@@ -186,7 +186,7 @@ server = dashboard("server-overview", "Server Overview - Host and System",
 web = dashboard("web-traffic", "Web Traffic and Uptime - All Sites",
     ["infra", "nginx", "blackbox", "uptime"], [
     row("Site status"),
-    stat("vedicpanchanga.com",
+    stat("astronode.in",
          'min(probe_success{app="vedicpanchanga",scope="public"})',
          mappings=UPDOWN,
          thresholds=[{"color": "red", "value": None}, {"color": "green", "value": 1}]),

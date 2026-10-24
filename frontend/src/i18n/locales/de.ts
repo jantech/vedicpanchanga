@@ -1025,7 +1025,7 @@ const de: Record<string, string> = {
   auth_modal_title_signin: "Willkommen zurück",
   auth_modal_title_signup: "Kostenloses Konto erstellen",
   auth_modal_blurb:
-    "Speichere deine Horoskope, öffne sie auf jedem Gerät und surfe mit Premium werbefrei.",
+    "Speichere deine Horoskope, öffne sie auf jedem Gerät und speichere mit Premium noch mehr.",
   auth_reason_save: "Melde dich an, um dieses Horoskop in deinem Konto zu speichern.",
   auth_terms_notice: "Mit dem Fortfahren akzeptierst du unsere {0} und {1}.",
   auth_error_generic: "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
@@ -1053,10 +1053,10 @@ const de: Record<string, string> = {
   acct_plan_premium: "Premium",
   acct_premium_badge: "Premium",
   acct_premium_desc:
-    "Werbefrei und bis zu {0} gespeicherte Horoskope. Danke für deine Unterstützung.",
-  acct_free_desc: "Werbung hält die Seite kostenlos. Speichere bis zu {0} Horoskope.",
+    "Bis zu {0} gespeicherte Horoskope. Danke für deine Unterstützung.",
+  acct_free_desc: "Speichere bis zu {0} Horoskope.",
   acct_upgrade: "Premium werden",
-  acct_upgrade_hint: "Alle Werbung entfernen und mehr Horoskope speichern. Jederzeit kündbar.",
+  acct_upgrade_hint: "Mehr Horoskope speichern. Jederzeit kündbar.",
   acct_plan_monthly: "Monatlich",
   acct_plan_yearly: "Jährlich",
   acct_renews: "Verlängert sich am {0}",

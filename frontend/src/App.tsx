@@ -5,9 +5,6 @@ import { Footer } from "@/components/shell/Footer";
 import { MandalaLoader } from "@/components/common/MandalaLoader";
 import { applySeo } from "@/lib/seo";
 import { fetchGeoIP } from "@/lib/api";
-import { loadAdSense } from "@/lib/adsense";
-import { loadGtag } from "@/lib/gtag";
-import { useAuth } from "@/auth";
 import { AuthModal } from "@/components/account/AuthModal";
 import type { LocationChoice } from "@/types/api";
 
@@ -78,23 +75,7 @@ export type View =
   | "learn-rashi"
   | "learn-vargas";
 
-const MONETIZED_VIEWS = new Set<View>([
-  "panchang",
-  "kundali",
-  "muhurta",
-  "transits",
-  "festivals",
-  "frequency",
-  "learn-kundali",
-  "learn-planets",
-  "learn-panchang",
-  "learn-dasha",
-  "learn-nakshatras",
-  "learn-rashi",
-  "learn-vargas",
-]);
-
-const SITE = "https://vedicpanchanga.com";
+const SITE = "https://astronode.in";
 
 const VIEW_PATH: Record<View, string> = {
   panchang: "/",
@@ -170,17 +151,17 @@ const SEO_BY_VIEW: Record<
   },
   privacy: {
     title: "Privacy Policy · Vedic Panchanga",
-    description: "How vedicpanchanga.com handles your data.",
+    description: "How astronode.in handles your data.",
     canonical: `${SITE}/privacy`,
   },
   terms: {
     title: "Terms of Use · Vedic Panchanga",
-    description: "Terms governing the use of vedicpanchanga.com.",
+    description: "Terms governing the use of astronode.in.",
     canonical: `${SITE}/terms`,
   },
   account: {
     title: "Your Account · Vedic Panchanga",
-    description: "Manage your Vedic Panchanga account, saved charts and ad-free subscription.",
+    description: "Manage your Vedic Panchanga account, saved charts and Premium subscription.",
     canonical: `${SITE}/account`,
     noindex: true,
   },
@@ -243,9 +224,9 @@ const SEO_BY_VIEW: Record<
 };
 
 const DEFAULT_LOCATION: LocationChoice = {
-  place_name: "Ujjain, Madhya Pradesh, India",
-  latitude: 23.1765,
-  longitude: 75.7885,
+  place_name: "Chennai, Chennai Metropolitan Area, Chennai District, Tamil Nadu, India",
+  latitude: 13.0827,
+  longitude: 80.2707,
   timezone: "Asia/Kolkata",
 };
 
@@ -314,7 +295,6 @@ function PageSkeleton() {
 export default function App() {
   const [view, setView] = useState<View>(() => migrateHashOnce() ?? viewFromPath());
   const [sharedLocation, setSharedLocation] = useState<LocationChoice>(DEFAULT_LOCATION);
-  const { status: authStatus, isPremium } = useAuth();
 
   // Push the new path whenever the view changes from in-app navigation.
   // Drop query params so the URL stays clean; share links are built on demand.
@@ -351,34 +331,6 @@ export default function App() {
   useEffect(() => {
     applySeo(SEO_BY_VIEW[view]);
   }, [view]);
-
-  // Auto ads: only on monetized routes, only once the session is known, and
-  // never for Premium subscribers (that is the subscription's entitlement).
-  // Waiting for authStatus === "ready" means a premium user never sees ads
-  // flash in before /api/auth/me answers.
-  useEffect(() => {
-    if (!MONETIZED_VIEWS.has(view)) return;
-    if (authStatus !== "ready" || isPremium) return;
-    const id = window.setTimeout(() => {
-      if (window.requestIdleCallback) {
-        window.requestIdleCallback(() => loadAdSense());
-      } else {
-        loadAdSense();
-      }
-    }, 3000);
-    return () => window.clearTimeout(id);
-  }, [view, authStatus, isPremium]);
-
-  useEffect(() => {
-    const id = window.setTimeout(() => {
-      if (window.requestIdleCallback) {
-        window.requestIdleCallback(() => loadGtag());
-      } else {
-        loadGtag();
-      }
-    }, 2000);
-    return () => window.clearTimeout(id);
-  }, []);
 
   useEffect(() => {
     const id = window.setTimeout(() => {

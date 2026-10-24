@@ -45,7 +45,7 @@ needs a rebuild. Restarting the dev server is not enough.
 | Var                                        | Required | Purpose                                                                    |
 | ------------------------------------------ | -------- | -------------------------------------------------------------------------- |
 | `VITE_BACKEND_URL`                         | dev      | Backend origin. Empty in prod: same-origin `/api` via the Nginx proxy.     |
-| `VITE_SUPPORT_EMAIL`, `VITE_CONTACT_EMAIL` | no       | Footer / legal-page contacts. Default to the vedicpanchanga.com addresses. |
+| `VITE_SUPPORT_EMAIL`, `VITE_CONTACT_EMAIL` | no       | Footer / legal-page contacts. Default to the astronode.in addresses. |
 
 ## Routing
 
@@ -58,8 +58,8 @@ needs a rebuild. Restarting the dev server is not enough.
 | `/festivals`                                                      | Hindu festival calendar for the chosen city    |
 | `/frequency`                                                      | Healing frequency / tone generator             |
 | `/learn/{kundali,planets,panchang,dasha,nakshatras,rashi,vargas}` | Long-form articles (`pages/articles/`)         |
-| `/account`                                                        | Profile, plan, saved charts (noindex, no ads)  |
-| `/privacy`, `/terms`                                              | Legal pages (no ads)                           |
+| `/account`                                                        | Profile, plan, saved charts (noindex)           |
+| `/privacy`, `/terms`                                              | Legal pages                                     |
 
 Refreshing on any path works: the Vite dev server falls back to
 `index.html` and nginx has `try_files $uri $uri/ /index.html;`. Old hash
@@ -108,12 +108,10 @@ src/
 │   └── planetGuide.ts      planet guide copy shown in PlanetDetailModal
 ├── lib/
 │   ├── api.ts              typed fetch for every backend endpoint + Nominatim geocoding
-│   ├── adsense.ts          Auto Ads loader (lazy, route-aware)
 │   ├── auspiciousHeatmap.ts day-strip scoring behind AuspiciousHeatmap
 │   ├── festivalThemes.ts   glyph + gradient per festival id for the hero cards
 │   ├── format.ts           date / time / dms formatters, nowTimeInTz
 │   ├── googleIdentity.ts   lazy loader for the Google Identity Services script
-│   ├── gtag.ts             Google Analytics helper
 │   ├── planets.ts          planet -> colour / long-name tables
 │   ├── richText.tsx        inline markup renderer for i18n strings
 │   ├── seo.ts              applySeo({ title, description, canonical })
@@ -143,14 +141,6 @@ Path alias `@/*` maps to `src/*` in both `vite.config.ts` and
 - `public/sitemap.xml` lists all 15 clean URLs; `robots.txt` allows
   everything; `llms.txt`, `index.md` and `.well-known/api-catalog` describe
   the site and API for AI crawlers.
-
-## AdSense
-
-Auto Ads only. The loader in `src/lib/adsense.ts` is lazy-injected after
-mount on monetised routes (not `/privacy`, `/terms` or `/account`), and only
-once `useAuth()` has resolved the session and the user is **not** Premium.
-`index.html` only carries the `<meta name="google-adsense-account">` tag. Do
-not add manual `<ins>` slots or per-slot env vars.
 
 ## Accounts
 

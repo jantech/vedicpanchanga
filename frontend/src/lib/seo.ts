@@ -34,11 +34,11 @@ export function applySeo({ title, description, canonical, keywords, noindex }: S
   setMeta("og:url", canonical, "property");
   setMeta("og:type", "website", "property");
   setMeta("og:site_name", "Vedic Panchanga", "property");
-  setMeta("og:image", "https://vedicpanchanga.com/og-image.png", "property");
+  setMeta("og:image", "https://astronode.in/og-image.png", "property");
   setMeta("twitter:card", "summary_large_image");
   setMeta("twitter:title", title);
   setMeta("twitter:description", description);
-  setMeta("twitter:image", "https://vedicpanchanga.com/og-image.png");
+  setMeta("twitter:image", "https://astronode.in/og-image.png");
   setLink("canonical", canonical);
   if (keywords) setMeta("keywords", keywords);
   setMeta(

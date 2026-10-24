@@ -6,7 +6,7 @@ import { planetColor } from "@/lib/planets";
 import { richText } from "@/lib/richText";
 import { ArticleLayout } from "./ArticleLayout";
 
-const SITE = "https://vedicpanchanga.com";
+const SITE = "https://astronode.in";
 
 export function NinePlanets() {
   const { t } = useI18n();

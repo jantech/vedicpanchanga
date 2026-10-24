@@ -64,7 +64,7 @@ def draw_header(pdf: FPDF, x: float, y: float, w: float, name: str, lang: str) -
         pdf,
         x + w - 6,
         y + 11,
-        "vedicpanchanga.com",
+        "astronode.in",
         LATIN_REGULAR,
         REGULAR,
         9,

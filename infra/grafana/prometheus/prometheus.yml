@@ -30,8 +30,8 @@ scrape_configs:
       module: [http_2xx]
     static_configs:
       - targets:
-          - https://vedicpanchanga.com/api/health
-          - https://vedicpanchanga.com/
+          - https://astronode.in/api/health
+          - https://astronode.in/
         labels:
           app: vedicpanchanga
           scope: public

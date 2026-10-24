@@ -1,4 +1,4 @@
-"""User accounts, saved charts and ad-free subscriptions.
+"""User accounts, saved charts and Premium subscriptions.
 
 This subpackage is the only stateful part of the backend. Everything else in
 ``backend/`` is a pure calculation that persists nothing; here we keep a small
@@ -13,7 +13,7 @@ SQLite database (``db.py``) with three concerns layered on top:
   The chart itself is recomputed on open so saved entries always reflect the
   current calculation code.
 * **Billing** - ``billing.py`` (``/api/billing/*``): Stripe Checkout for a
-  recurring "Premium" subscription whose only entitlement today is no ads plus
+  recurring "Premium" subscription whose only entitlement today is
   a higher saved-chart cap. Stripe webhooks are the source of truth for the
   premium flag.
 * **Durability** - ``d1.py`` (Cloudflare D1 HTTP client) and ``backup.py``
@@ -37,7 +37,7 @@ same spirit as ``auth.py``'s ``API_KEYS``:
                         Replica target. Unset = ``backup.py`` is a no-op.
 ``DATABASE_PATH``       SQLite file, default ``backend/data/app.db``.
 ``PUBLIC_URL``          Origin used in emails / Stripe redirects
-                        (default ``https://vedicpanchanga.com``).
+                        (default ``https://astronode.in``).
 ======================  ======================================================
 
 Secrets belong in ``backend/.env.local`` (gitignored, never rewritten by the
