@@ -1041,8 +1041,7 @@ const ja: Record<string, string> = {
   acct_plan_free: "無料",
   acct_plan_premium: "プレミアム",
   acct_premium_badge: "プレミアム",
-  acct_premium_desc:
-    "チャートを最大 {0} 件保存できます。サイトへのご支援ありがとうございます。",
+  acct_premium_desc: "チャートを最大 {0} 件保存できます。サイトへのご支援ありがとうございます。",
   acct_free_desc: "チャートは最大 {0} 件保存できます。",
   acct_upgrade: "プレミアムにする",
   acct_upgrade_hint: "より多くのチャートを保存。いつでも解約できます。",

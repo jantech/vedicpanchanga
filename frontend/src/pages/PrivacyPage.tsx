@@ -45,12 +45,11 @@ export function PrivacyPage() {
       <Section title="Overview">
         <div className="space-y-3 text-meta text-ink leading-relaxed">
           <p>
-            <strong>astronode.in</strong> ("we", "our", "the site") is a commercial
-            service that provides Vedic astrological calculations (panchang,
-            kundali, muhurta). Every calculator works without an account. An optional free account
-            (Google or email) lets you save charts, and an optional paid Premium plan raises the
-            saved-chart limit. This policy explains what information is processed when you use the site
-            and how it is handled.
+            <strong>astronode.in</strong> ("we", "our", "the site") is a commercial service that
+            provides Vedic astrological calculations (panchang, kundali, muhurta). Every calculator
+            works without an account. An optional free account (Google or email) lets you save
+            charts, and an optional paid Premium plan raises the saved-chart limit. This policy
+            explains what information is processed when you use the site and how it is handled.
           </p>
           <p>
             By using the site you agree to this Privacy Policy and to the{" "}

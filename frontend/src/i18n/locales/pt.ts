@@ -1047,8 +1047,7 @@ const pt: Record<string, string> = {
   acct_plan_free: "Gratuito",
   acct_plan_premium: "Premium",
   acct_premium_badge: "Premium",
-  acct_premium_desc:
-    "Até {0} mapas guardados. Obrigado por apoiar o site.",
+  acct_premium_desc: "Até {0} mapas guardados. Obrigado por apoiar o site.",
   acct_free_desc: "Guarde até {0} mapas.",
   acct_upgrade: "Tornar-se Premium",
   acct_upgrade_hint: "Guarde mais mapas. Cancele quando quiser.",

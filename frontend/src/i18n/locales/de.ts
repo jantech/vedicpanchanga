@@ -1052,8 +1052,7 @@ const de: Record<string, string> = {
   acct_plan_free: "Kostenlos",
   acct_plan_premium: "Premium",
   acct_premium_badge: "Premium",
-  acct_premium_desc:
-    "Bis zu {0} gespeicherte Horoskope. Danke für deine Unterstützung.",
+  acct_premium_desc: "Bis zu {0} gespeicherte Horoskope. Danke für deine Unterstützung.",
   acct_free_desc: "Speichere bis zu {0} Horoskope.",
   acct_upgrade: "Premium werden",
   acct_upgrade_hint: "Mehr Horoskope speichern. Jederzeit kündbar.",

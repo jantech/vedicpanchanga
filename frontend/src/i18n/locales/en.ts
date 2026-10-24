@@ -1066,8 +1066,7 @@ const en: Record<string, string> = {
   acct_plan_free: "Free",
   acct_plan_premium: "Premium",
   acct_premium_badge: "Premium",
-  acct_premium_desc:
-    "Up to {0} saved charts. Thank you for supporting the site.",
+  acct_premium_desc: "Up to {0} saved charts. Thank you for supporting the site.",
   acct_free_desc: "Save up to {0} charts.",
   acct_upgrade: "Go Premium",
   acct_upgrade_hint: "Save more charts. Cancel any time.",

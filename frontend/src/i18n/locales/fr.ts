@@ -1053,12 +1053,10 @@ const fr: Record<string, string> = {
   acct_plan_free: "Gratuite",
   acct_plan_premium: "Premium",
   acct_premium_badge: "Premium",
-  acct_premium_desc:
-    "Jusqu'à {0} thèmes enregistrés. Merci de soutenir le site.",
+  acct_premium_desc: "Jusqu'à {0} thèmes enregistrés. Merci de soutenir le site.",
   acct_free_desc: "Enregistrez jusqu'à {0} thèmes.",
   acct_upgrade: "Passer à Premium",
-  acct_upgrade_hint:
-    "Enregistrez plus de thèmes. Résiliable à tout moment.",
+  acct_upgrade_hint: "Enregistrez plus de thèmes. Résiliable à tout moment.",
   acct_plan_monthly: "Mensuel",
   acct_plan_yearly: "Annuel",
   acct_renews: "Renouvellement le {0}",

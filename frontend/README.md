@@ -42,10 +42,10 @@ Vitest when you need one.
 Vite bakes `VITE_*` variables in **at build time**, so editing `.env`
 needs a rebuild. Restarting the dev server is not enough.
 
-| Var                                        | Required | Purpose                                                                    |
-| ------------------------------------------ | -------- | -------------------------------------------------------------------------- |
-| `VITE_BACKEND_URL`                         | dev      | Backend origin. Empty in prod: same-origin `/api` via the Nginx proxy.     |
-| `VITE_SUPPORT_EMAIL`, `VITE_CONTACT_EMAIL` | no       | Footer / legal-page contacts. Default to the astronode.in addresses. |
+| Var                                        | Required | Purpose                                                                |
+| ------------------------------------------ | -------- | ---------------------------------------------------------------------- |
+| `VITE_BACKEND_URL`                         | dev      | Backend origin. Empty in prod: same-origin `/api` via the Nginx proxy. |
+| `VITE_SUPPORT_EMAIL`, `VITE_CONTACT_EMAIL` | no       | Footer / legal-page contacts. Default to the astronode.in addresses.   |
 
 ## Routing
 
@@ -58,8 +58,8 @@ needs a rebuild. Restarting the dev server is not enough.
 | `/festivals`                                                      | Hindu festival calendar for the chosen city    |
 | `/frequency`                                                      | Healing frequency / tone generator             |
 | `/learn/{kundali,planets,panchang,dasha,nakshatras,rashi,vargas}` | Long-form articles (`pages/articles/`)         |
-| `/account`                                                        | Profile, plan, saved charts (noindex)           |
-| `/privacy`, `/terms`                                              | Legal pages                                     |
+| `/account`                                                        | Profile, plan, saved charts (noindex)          |
+| `/privacy`, `/terms`                                              | Legal pages                                    |
 
 Refreshing on any path works: the Vite dev server falls back to
 `index.html` and nginx has `try_files $uri $uri/ /index.html;`. Old hash

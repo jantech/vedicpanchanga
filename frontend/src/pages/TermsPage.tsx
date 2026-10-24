@@ -45,8 +45,8 @@ export function TermsPage() {
       <Section title="Acceptance of Terms">
         <div className="space-y-3 text-meta text-ink leading-relaxed">
           <p>
-            By accessing or using <strong>astronode.in</strong> (the "site"), you agree to be
-            bound by these Terms of Use and the{" "}
+            By accessing or using <strong>astronode.in</strong> (the "site"), you agree to be bound
+            by these Terms of Use and the{" "}
             <a href="/privacy" className="text-saffron hover:text-saffron-dark underline">
               Privacy Policy
             </a>
@@ -58,9 +58,9 @@ export function TermsPage() {
       <Section title="Service Description">
         <div className="space-y-3 text-meta text-ink leading-relaxed">
           <p>
-            The site is a commercial service that offers astronomical and
-            astrological calculations including panchang, kundali, divisional charts, dasha, and
-            muhurta search. Calculations are produced by software using the Swiss Ephemeris.
+            The site is a commercial service that offers astronomical and astrological calculations
+            including panchang, kundali, divisional charts, dasha, and muhurta search. Calculations
+            are produced by software using the Swiss Ephemeris.
           </p>
           <p>
             All calculators are available without an account. Optionally you may create a free
@@ -147,8 +147,9 @@ export function TermsPage() {
               notify subscribers by email before the change takes effect at their next renewal.
             </li>
             <li>
-              <strong>What Premium is.</strong> Premium raises the saved-chart limit. It does not alter the calculations, which remain the same for
-              all users and carry the same disclaimers below.
+              <strong>What Premium is.</strong> Premium raises the saved-chart limit. It does not
+              alter the calculations, which remain the same for all users and carry the same
+              disclaimers below.
             </li>
           </ul>
         </div>
